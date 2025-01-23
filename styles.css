@@ -509,3 +509,125 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #45a049;
 }
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Хедер */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #003366;
+    color: #fff;
+    padding: 1rem 2rem;
+    flex-wrap: wrap; /* Для перестройки на маленьких экранах */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Динамический отступ между логотипом и текстом */
+    flex-wrap: wrap; /* Логотип и текст в столбик на маленьких экранах */
+}
+
+.logo-img {
+    width: 100px; /* Размер логотипа */
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    white-space: nowrap; /* Предотвращение переноса текста */
+}
+
+/* Секция "Про мікрокальцит" */
+.about {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+.about .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Центрирование карточек */
+    margin-top: 2rem;
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 1rem); /* Три карточки в ряд */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    .logo-container {
+        gap: 0.5rem; /* Уменьшаем отступ на маленьких экранах */
+        justify-content: center;
+    }
+    .logo-text {
+        font-size: 1.5rem; /* Меньший размер шрифта текста */
+    }
+
+    .card {
+        width: calc(50% - 1rem); /* Две карточки в ряд */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        flex-direction: column; /* Логотип и текст в столбик */
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Одна карточка в ряд */
+    }
+}
