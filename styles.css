@@ -23,31 +23,47 @@ body {
 
 /* Хедер */
 .header {
-    background: #003366; /* Темно-синий цвет */
-    color: #fff;
-    padding: 1.5rem 0;
-    text-align: center;
     display: flex;
-    justify-content: space-between; /* Добавлено для выравнивания элементов */
-    align-items: center; /* Выравнивание по центру по вертикали */
+    justify-content: space-between;
+    align-items: center;
+    background: #003366;
+    color: #fff;
+    padding: 1rem 2rem;
+    flex-wrap: wrap; /* Перестройка на маленьких экранах */
 }
 
-.header .logo-container {
+.logo-container {
     display: flex;
     align-items: center;
-    gap: 300px; /* Расстояние между изображением и текстом */
-}
-
-.header .logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+    gap: 1rem; /* Меньший отступ между логотипом и текстом */
+    flex-wrap: wrap; /* Логотип и текст в столбик на узких экранах */
 }
 
 .logo-img {
-    width: 150px; /* Ширина логотипа */
+    width: 100px; /* Размер логотипа */
     height: auto;
 }
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    white-space: nowrap; /* Предотвращение переноса текста */
+    margin-top: 0; /* Убираем лишний отступ сверху */
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 480px) {
+    .logo-container {
+        flex-direction: column; /* Логотип и текст в столбик */
+        align-items: center;
+        gap: 0.5rem; /* Уменьшаем расстояние между логотипом и текстом */
+    }
+    
+    .logo-text {
+        font-size: 1.5rem; /* Уменьшение размера текста на маленьких экранах */
+    }
+}
+
 
 /* Навигация */
 .nav ul {
@@ -538,14 +554,13 @@ body {
     background: #003366;
     color: #fff;
     padding: 1rem 2rem;
-    flex-wrap: wrap; /* Для перестройки на маленьких экранах */
+    flex-wrap: wrap; /* Позволяет элементам перестраиваться на маленьких экранах */
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Динамический отступ между логотипом и текстом */
-    flex-wrap: wrap; /* Логотип и текст в столбик на маленьких экранах */
+    gap: 1rem; /* Отступ между логотипом и текстом */
 }
 
 .logo-img {
@@ -556,8 +571,30 @@ body {
 .logo-text {
     font-size: 1.8rem;
     font-weight: bold;
-    white-space: nowrap; /* Предотвращение переноса текста */
+    text-align: center;
+    width: 100%; /* Заставляет текст занимать всю ширину */
+    margin-top: 0; /* Убираем лишний отступ сверху */
+    position: relative; /* Для точного центрирования */
+    top: 0; /* Поддержка одинаковой высоты на всех экранах */
 }
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Логотип и текст в столбик */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .logo-container {
+        justify-content: center;
+        gap: 0; /* Убираем лишнее расстояние на маленьких экранах */
+    }
+
+    .logo-text {
+        font-size: 1.5rem; /* Уменьшение текста на мобильных */
+    }
+}
+
 
 /* Секция "Про мікрокальцит" */
 .about {
