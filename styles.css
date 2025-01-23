@@ -645,17 +645,29 @@ body {
 
 /* Медиазапросы для адаптивности */
 @media (max-width: 768px) {
-    .logo-container {
-        gap: 0.5rem; /* Уменьшаем отступ на маленьких экранах */
-        justify-content: center;
-    }
-    .logo-text {
-        font-size: 1.5rem; /* Меньший размер шрифта текста */
-    }
-
     .card {
         width: calc(50% - 1rem); /* Две карточки в ряд */
     }
+}
+    
+
+@media (max-width: 768px) {
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two cards in a row */
+        gap: 1rem;
+    }
+    
+    .about-card {
+            width: 100%; /* Full width within the grid */
+        }
+        .logo-container {
+            gap: 0.5rem; /* Уменьшаем отступ на маленьких экранах */
+            justify-content: center;
+        }
+        .logo-text {
+            font-size: 1.5rem; /* Меньший размер шрифта текста */
+        }
 }
 
 @media (max-width: 480px) {
@@ -664,8 +676,7 @@ body {
         align-items: center;
     }
 
-    .card {
+    .about-card {
         width: 100%; /* Одна карточка в ряд */
     }
 }
-
